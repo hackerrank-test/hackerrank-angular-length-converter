@@ -1,0 +1,29 @@
+
+<div class="layout-row align-items-center justify-content-center mt-50">
+
+  <section class="layout-column align-items-center justify-content-between">
+    <span class="input layout-row">
+        <input type="number" class="large" [(ngModel)]="input1Val"
+        (ngModelChange)="handleChangeInput1($event)"
+        data-test-id="app-input1"/>
+        <label class="suffix" data-test-id="app-label1">{{this.lengthOptions[select1Val].unit}}</label>
+    </span>
+    <select [(ngModel)]="select1Val" (ngModelChange)="handleChangeSelect1($event)" data-test-id="app-select1">
+      <option *ngFor="let item of lengthOptions;" value="{{item.id}}">{{item.label}}</option>
+    </select>
+  </section>
+
+  <label>⇋</label>
+
+  <section class="layout-column align-items-center justify-content-between">
+    <span class="input layout-row">
+        <input type="number" class="large" [(ngModel)]="input2Val"
+        (ngModelChange)="handleChangeInput2($event)"
+        data-test-id="app-input2"/>
+        <label class="suffix" data-test-id="app-label2">{{this.lengthOptions[select2Val].unit}}</label>
+    </span>
+    <select [(ngModel)]="select2Val" (ngModelChange)="handleChangeSelect2($event)" data-test-id="app-select2">
+      <option *ngFor="let item of lengthOptions;" value="{{item.id}}">{{item.label}}</option>
+    </select>
+  </section>
+</div>
